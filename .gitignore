@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[oc]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+
+# Virtual environments
+.venv/
+
+.idea/
+.vscode
+
+# Local secrets and encrypted files
+.env
+*.enc
+
+# Scraped output
+data/*.sqlite
+data/*.csv

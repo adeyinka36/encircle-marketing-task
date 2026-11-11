@@ -1,0 +1,36 @@
+[project]
+name = "encircle-marketing-challenge"
+version = "0.1.0"
+description = "Scrape 205/55R16 tyre listings from gumi.hu and tirendo.fr"
+readme = "README.md"
+authors = [
+    { email = "adeyinka36@hotmail.co.uk" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "beautifulsoup4>=4.15.0",
+    "playwright>=1.49.0",
+    "pydantic>=2.14.3",
+    "requests>=2.34.2",
+]
+
+[project.scripts]
+gumi = "gumi:main"
+tirendo = "tirendo:main"
+analyse = "analyse:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["gumi", "tirendo", "models", "utils", "store", "analyse"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
